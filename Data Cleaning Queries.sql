@@ -77,6 +77,87 @@ WHERE
      a.PropertyAddress IS NULL
 
       
+      
+--------------------------------------------------------------------------------------------------------------------------
+
+-- Breaking out Address into Individual Columns (Address, City, State)
+
+SELECT
+    PropertyAddress,
+    SUBSTRING(PropertyAddress, 1, STRPOS(PropertyAddress, ',')-1) AS StreetAddress,
+    LTRIM(SUBSTRING(PropertyAddress, STRPOS(PropertyAddress,',')+1, LENGTH(PropertyAddress))) AS City
+FROM
+    PortfolioProject.NashvilleHousing
+
+ALTER TABLE NashvilleHousing
+ADD PropertyStreettAddress STRING
+
+UPDATE NashvilleHousing
+SET PropertyStreetAddress = SUBSTRING(PropertyAddress, 1, STRPOS(PropertyAddress, ',')-1)
+
+
+ALTER TABLE NashvilleHousing
+Add PropertySplitCity STRING
+
+UPDATE NashvilleHousing
+SET PropertySplitCity = LTRIM(SUBSTRING(PropertyAddress, STRPOS(PropertyAddress,',')+1, LENGTH(PropertyAddress)))
+
+
+
+
+SELECT 
+      OwnerAddress
+FROM
+      `light-sunup-366114.PortfolioProject.NashvilleHousing` 
+
+
+SELECT 
+      OwnerAddress,
+      SPLIT(OwnerAddress, ',') [OFFSET(0)] AS OwnerStreetAddress,
+      SPLIT(OwnerAddress, ',') [OFFSET(1)] AS OwnerCity,
+      SPLIT(OwnerAddress, ',') [OFFSET(2)] AS OwnerState
+FROM
+      `light-sunup-366114.PortfolioProject.NashvilleHousing` 
+
+
+ALTER TABLE NashvilleHousing
+Add OwnerSplitAddress STRING;
+
+UPDATE NashvilleHousing
+SET OwnerSplitAddress = SPLIT(OwnerAddress, ',') [OFFSET(0)]
+
+
+ALTER TABLE NashvilleHousing
+Add OwnerSplitCity STRING;
+
+UPDATE NashvilleHousing
+SET OwnerSplitCity = SPLIT(OwnerAddress, ',') [OFFSET(1)]
+
+
+
+ALTER TABLE NashvilleHousing
+Add OwnerSplitState STRING;
+
+UPDATE NashvilleHousing
+SET OwnerSplitState = SPLIT(OwnerAddress, ',')[OFFSET(2)]
+
+Select 
+     *
+From 
+     PortfolioProject.NashvilleHousing
+     
+     
+     
+--------------------------------------------------------------------------------------------------------------------------
+
+
+-- Change Y and N to Yes and No in "Sold as Vacant" field
+
+
+
+
+
+
      
 
  
