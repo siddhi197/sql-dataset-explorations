@@ -1,0 +1,1 @@
+This repository houses a collection of data analysis projects where I've utilized SQL to clean, analyze, and visualize datasets. The projects include working with large datasets, performing data transformations, and extracting insights. 
