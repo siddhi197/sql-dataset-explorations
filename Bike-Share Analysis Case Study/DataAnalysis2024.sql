@@ -17,6 +17,17 @@ FROM trip_data_2024_cleaned
 GROUP BY member_casual
 ;
 
+-- 1.3. Analyze and Compare the Different Bike Types Used by Each Rider Category
+SELECT 
+	member_casual,
+	rideable_type,
+	COUNT(*) AS total_rides
+FROM trip_data_2024_cleaned
+GROUP BY member_casual, rideable_type
+ORDER BY member_casual, 
+	     total_rides DESC
+;
+
 -- Step 2: Analyze the Usage Patterns by Day of the Week for Each Rider Type
 -- This will help us identify if there is any pattern in the day of the week when annual members and casual riders use bikes.
 
