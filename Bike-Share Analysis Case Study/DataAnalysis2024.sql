@@ -25,7 +25,7 @@ SELECT
 FROM trip_data_2024_cleaned
 GROUP BY member_casual, rideable_type
 ORDER BY member_casual, 
-	     total_rides DESC
+	 total_rides DESC
 ;
 
 -- Step 2: Analyze the Usage Patterns by Day of the Week for Each Rider Type
