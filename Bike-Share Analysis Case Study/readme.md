@@ -68,5 +68,4 @@ This section will evaluate five criteria to determine the data's suitability: **
 ### License, Privacy, Security, and Accessibility
 The data originates from **Lyft Bikes and Scooters, LLC** (“Bikeshare”), which operates the Divvy bicycle-sharing service in Chicago. Both Bikeshare and the City of Chicago advocate for bicycling as a viable alternative transportation option. The City has authorized Bikeshare to publicly disseminate specific Divvy system data in accordance with the Data License Agreement.
 
-The Data License Agreement grants a non-exclusive, royalty-free, perpetual license to access, reproduce, analyze, copy, modify, distribute in a product and use the data for any lawful purpose. [Click here for all the details](https://www.lyft.com/bike-and-scooter).
 
